@@ -3,6 +3,7 @@ const path = require('path');
 // update from 23.12.2018
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: { main: './src/app.js' },
   output: {
@@ -31,6 +32,7 @@ module.exports = {
     ]
   }, 
   plugins: [
+    new CleanWebpackPlugin('dist', {} ),
     new ExtractTextPlugin("styles.css"),
   ]
 };
